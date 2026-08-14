@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# CDK
+cdk.out/
+.cdk.staging/
+
+# testing
+coverage/
+
+# build
+*.js
+!jest.config.js
+*.d.ts
+
+# env files (keep .env.example committed)
+.env*
+!.env.example
+
+# misc
+.DS_Store
+*.tsbuildinfo
+npm-debug.log*

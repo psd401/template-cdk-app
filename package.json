@@ -1,0 +1,30 @@
+{
+  "name": "template-cdk-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit",
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.265.0",
+    "cdk-nag": "^3.0.2",
+    "constructs": "^10.5.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.2.0",
+    "aws-cdk": "^2.1136.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-jest": "^29.16.1",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.12",
+    "tsx": "^4.23.12",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.67.0"
+  }
+}
