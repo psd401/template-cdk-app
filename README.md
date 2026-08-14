@@ -14,7 +14,7 @@ PSD401 template for AWS CDK v2 (TypeScript) apps, built to the district IaC stan
 1. **Rename**: `package.json` name; every CHANGEME in `bin/app.ts` (application, repo, data classification).
 2. **Set repo custom properties**: `tier` (default `c-experiment`), `owner`, `lifecycle: active`; add topics (`cdk`, …).
 3. **Review CLAUDE.md**, especially the IaC rules — they are review-blocking.
-4. **Verify green**: `npm install && npm test && npm run lint && npm run typecheck && npm run synth`.
+4. **Verify green**: `bun install && bun run test && bun run lint && bun run typecheck && bun run synth` (bun is the PSD JS runtime rule; `bun.lock` is committed).
 5. Replace `StorageStack` with your real stacks. Keep stateful and stateless resources in separate stacks; re-pin logical IDs in tests for every stateful resource you add.
 
 ## Deploying
@@ -25,10 +25,11 @@ Nobody — human or agent — runs `cdk deploy` locally. Merged PRs deploy throu
 
 | Task | Command |
 |------|---------|
-| Test | `npm test` |
-| Synth (runs cdk-nag) | `npm run synth` |
-| Diff | `npm run diff` |
-| Lint / Typecheck | `npm run lint` / `npm run typecheck` |
+| Install | `bun install` |
+| Test | `bun run test` |
+| Synth (runs cdk-nag) | `bun run synth` |
+| Diff | `bun run diff` |
+| Lint / Typecheck | `bun run lint` / `bun run typecheck` |
 
 ## Owner
 

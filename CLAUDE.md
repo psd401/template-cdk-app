@@ -10,12 +10,15 @@ Map, not manual. Change this file in the same PR that changes the convention.
 ## Commands (exact)
 
 ```bash
-npm test             # jest (CI gate; zero-test repos fail psd-ci)
-npm run synth        # cdk synth — runs cdk-nag; violations fail synth
-npm run diff         # cdk diff against deployed state
-npm run lint         # eslint . — includes test-quality rules
-npm run typecheck    # tsc --noEmit
+bun install          # bun is the PSD JS package manager (bun.lock is committed)
+bun run test         # jest (CI gate; zero-test repos fail psd-ci)
+bun run synth        # cdk synth — runs cdk-nag; violations fail synth
+bun run diff         # cdk diff against deployed state
+bun run lint         # eslint . — includes test-quality rules
+bun run typecheck    # tsc --noEmit
 ```
+
+Always `bun run test` (the package script), never bare `bun test` (bun's own runner).
 
 ## Map
 
