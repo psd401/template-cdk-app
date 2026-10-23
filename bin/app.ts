@@ -19,7 +19,7 @@ Tags.of(app).add("psd:environment", process.env.PSD_ENVIRONMENT ?? "dev");
 Tags.of(app).add("psd:owner", "technology-services");
 Tags.of(app).add("psd:managed-by", "cdk");
 Tags.of(app).add("psd:repo", "PSD401/CHANGEME-repo");
-// One of: public | internal | student-pii
+// One of: public | internal | partner-pii | student-pii (psd-dev-standards standards/08)
 Tags.of(app).add("psd:data-classification", "internal");
 
 new StorageStack(app, "StorageStack", {
