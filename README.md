@@ -7,13 +7,13 @@ PSD401 template for AWS CDK v2 (TypeScript) apps, built to the district IaC stan
 - **`bin/app.ts`** — district tag set applied mechanically via `Tags.of(app)` (`psd:application`, `psd:environment`, `psd:owner`, `psd:managed-by=cdk`, `psd:repo`, `psd:data-classification`), and **cdk-nag v3** AwsSolutions pack wired through the CDK policy-validation framework (`Validations.of(app).addPlugins(...)`).
 - **`lib/storage-stack.ts`** — one exemplar stateful stack: an S3 bucket with block-public-access, encryption at rest, SSL enforced, versioning, and `RemovalPolicy.RETAIN`.
 - **Jest tests** (`test/storage-stack.test.ts`) using `aws-cdk-lib/assertions`: a `hasResourceProperties` assertion on the secure defaults and a **logical-ID pin test** on the bucket (replacement of a stateful resource = data loss).
-- **Committed `cdk.json`**, PSD CI callers, Dependabot, MIT LICENSE, CLAUDE.md.
+- **Committed `cdk.json`**, PSD CI callers, Dependabot, MIT LICENSE, AGENTS.md (`CLAUDE.md` imports it).
 
 ## First 10 minutes
 
 1. **Rename**: `package.json` name; every CHANGEME in `bin/app.ts` (application, repo, data classification).
 2. **Set repo custom properties**: `tier` (default `c-experiment`), `owner`, `lifecycle: active`; add topics (`cdk`, …).
-3. **Review CLAUDE.md**, especially the IaC rules — they are review-blocking.
+3. **Review AGENTS.md**, especially the IaC rules — they are review-blocking.
 4. **Verify green**: `bun install && bun run test && bun run lint && bun run typecheck && bun run synth` (bun is the PSD JS runtime rule; `bun.lock` is committed).
 5. Replace `StorageStack` with your real stacks. Keep stateful and stateless resources in separate stacks; re-pin logical IDs in tests for every stateful resource you add.
 
